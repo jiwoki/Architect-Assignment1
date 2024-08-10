@@ -16,6 +16,7 @@ public class TaskView {
     private TextField taskInput; // Text field for inputting new task
     private Button addButton; // Button for adding task
     private Button deleteButton; // Button for removing task
+    private Button sortButton; // Button for sorting tasks
     private ListView<Task> taskList; // List view for displaying all tasks
 
     // Constructor for JavaFX components
@@ -27,11 +28,12 @@ public class TaskView {
 
         addButton = new Button("ADD"); // Initialize add button
         deleteButton = new Button("Delete"); // Initialize delete button
+        sortButton = new Button("Sort"); // Initialize sort button
         taskList = new ListView<>(); // Initialize list view
 
 
         // add components to vertical box layout
-        root.getChildren().addAll(taskInput, addButton, deleteButton, taskList);
+        root.getChildren().addAll(taskInput, addButton, deleteButton, sortButton, taskList);
 
         Scene scene = new Scene(root, 300, 400); // Initialize scene with the vertical box layout
         stage.setTitle("ToDo List"); // set the title of the stage
@@ -50,6 +52,11 @@ public class TaskView {
     public Button getDeleteButton() {
         return deleteButton;
     }
+    // Getter method for sort button
+    public Button getSortButton() {
+        return sortButton;
+    }
+
     // Getter method for the task list view
     public ListView<Task> getTaskList() {
         return taskList;
